@@ -1,0 +1,66 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+dotfiles:
+  d_scripts:
+    src: scripts
+    dst: ~/.scripts
+  f_xdefaults:
+    src: Xdefaults
+    dst: ~/.Xdefaults
+  f_xinitrc:
+    src: xinitrc
+    dst: ~/.xinitrc
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+  f_zprofile:
+    src: zprofile
+    dst: ~/.zprofile
+  d_dunst:
+    src: config/dunst
+    dst: ~/.config/dunst
+  d_i3:
+    src: config/i3
+    dst: ~/.config/i3
+  d_neofetch:
+    src: config/neofetch
+    dst: ~/.config/neofetch
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
+  d_ranger:
+    src: config/ranger
+    dst: ~/.config/ranger
+  d_rofi:
+    src: config/rofi
+    dst: ~/.config/rofi
+  d_zathura:
+    src: config/zathura
+    dst: ~/.config/zathura
+    chmod: '700'
+profiles:
+  BlackLight:
+    dotfiles:
+    - d_scripts
+    - f_xdefaults
+    - f_xinitrc
+    - f_zshrc
+    - f_zprofile
+    - d_dunst
+    - d_i3
+    - d_neofetch
+    - d_nvim
+    - d_polybar
+    - d_ranger
+    - d_rofi
+    - d_zathura

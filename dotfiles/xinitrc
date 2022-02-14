@@ -1,0 +1,11 @@
+udiskie &
+flashfocus &
+xset s off
+~/.screenlayout/layout.sh # set screen layout
+xrdb ~/.Xdefaults 
+
+if [[ "$(tty)" = "/dev/tty1" ]]; then
+    exec i3;
+elif [[ "$(tty)" = "/dev/tty3" ]]; then
+    exec dwm;
+fi

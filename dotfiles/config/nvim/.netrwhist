@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/farris/Code/stallman'
+let g:netrw_dirhist_5='/home/farris/HDD/Books/Textbooks'
+let g:netrw_dirhist_4='/home/farris/.arduino15/packages/arduino/tools/avrdude'
+let g:netrw_dirhist_3='/home/farris/.config/polybar'
+let g:netrw_dirhist_2='/home/farris/.config/i3'
+let g:netrw_dirhist_1='/home/farris/.config/polybar'

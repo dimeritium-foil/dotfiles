@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if (( $(pgrep polybar | wc -l) == 2 ))
+then
+    PID=$(ps -ef | grep "polybar traybar" | awk '{print $2; exit;}')
+    kill -9 $PID
+
+else
+    polybar -q traybar &
+fi

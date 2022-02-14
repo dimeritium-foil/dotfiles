@@ -1,0 +1,9 @@
+#!/bin/sh
+
+workspaces=$(i3-msg -t get_workspaces | jq '.[] | select(.visible==true).name')
+
+for ws in $workspaces
+do
+    i3-msg "[workspace=$ws]" move workspace to output right
+    sleep 0.1
+done

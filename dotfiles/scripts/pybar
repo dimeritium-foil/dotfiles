@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+
+import sys
+
+fullchar = '━'
+emptychar = '─'
+indicator = '┫'
+
+value = int(sys.argv[1])
+max_value = 100
+
+steps = 20
+single_step = max_value // steps
+step_value = value // single_step
+
+print(fullchar * step_value, end='')
+print(indicator, end='')
+print(emptychar * (steps - step_value), end='')
+
+print(' ' + str(value) + '%')

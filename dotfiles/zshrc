@@ -1,0 +1,81 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=100000
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/farris/.zshrc'
+
+# case-insensitive matching
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+autoload -U colors && colors
+
+bindkey "^H" backward-kill-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+PS1="┌─[%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[magenta]%}%M%{$reset_color%}]──[%{$fg[magenta]%}%2c%{$reset_color%}]
+└──╼ "
+
+export PATH="$HOME/.local/bin:$PATH"
+export EDITOR=nvim
+export VISUAL=nvim
+export WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
+export COLORTERM=truecolor
+
+alias sudo='sudo '
+alias ls='exa --icons --group-directories-first'
+alias yay='yay --aur'
+alias oldls='/usr/bin/ls --color=auto --group-directories-first'
+alias r='ranger'
+alias p='pacman'
+alias py='python'
+alias ipy='ipython'
+alias grep='grep --color=auto -i'
+alias egrep='egrep --color=auto'
+alias starwars='telnet towel.blinkenlights.nl'
+alias feh='feh -d --scale-down --image-bg "#212121"'
+alias v='nvim'
+alias gotop='gotop -c solarized'
+alias pkglist='expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqe | sort) <(pacman -Qqg | sort)) | sort -n | less'
+alias clip='xclip -selection clipboard'
+alias update-mirrors='reflector --verbose --sort rate -a 1 -n 30 --save /etc/pacman.d/mirrorlist'
+alias new='urxvt -cd "$(pwd)" &; disown'
+alias pdb='python -m pdb'
+
+# make "Q" exit to working directory in ranger
+function ranger {
+    local IFS=$'\t\n'
+    local tempfile="$(mktemp -t tmp.XXXXXX)"
+    local ranger_cmd=(
+        command
+        ranger
+        --cmd="map Q chain shell echo %d > "$tempfile"; quitall"
+    )
+    
+    ${ranger_cmd[@]} "$@"
+    if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]]; then
+        cd -- "$(cat "$tempfile")" || return
+    fi
+    command rm -f -- "$tempfile" 2>/dev/null
+}
+
+eval "$(thefuck --alias)"
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# manpage colors
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;47;30m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}

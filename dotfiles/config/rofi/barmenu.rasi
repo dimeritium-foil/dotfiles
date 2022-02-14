@@ -1,0 +1,53 @@
+* {
+    background-color:      #191919;
+    border-color:          #00000000;
+    text-color:           #dfdfdf;
+    font:            "Iosevka 13";
+}
+
+#window {
+    anchor:     north;
+    location:   north;
+    width:      1880;
+    height:	    32px;
+    y-offset:	15;
+    padding:    0px;
+    children:   [ horibox ];
+}
+
+#horibox {
+    orientation: horizontal;
+    children:   [prompt, entry, listview];
+}
+
+#dummy {
+	expand: true;
+    	padding: 5px 10px;
+}
+
+#prompt {
+    padding: 4px 10px;
+    background-color: #444;
+}
+
+#listview {
+    expand:	true;
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      100;
+}
+
+#entry {
+    expand:     false;
+    width:      3em;
+    padding: 5px 10px;
+}
+
+#element {
+    padding: 5px 10px;
+}
+#element selected {
+    background-color: #444;
+}
+
+/* vim:ft=css

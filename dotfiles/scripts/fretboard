@@ -1,0 +1,11 @@
+#!/bin/env python3
+
+from random import randint
+
+strings = ["low E", "A", "D", "G", "B", "high E"]
+
+while True:
+    print("string " + strings[randint(0, 5)] + " + fret " + str(randint(1, 22)))
+
+    if input() != "":
+        break

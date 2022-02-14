@@ -1,0 +1,16 @@
+#!/bin/bash
+ 
+res=$(echo "suspend|reboot|shutdown" | rofi -theme powerbarmenu.rasi -sep "|" -dmenu -i -p '') 
+ 
+if [ $res = "suspend" ]; then
+    systemctl suspend
+fi
+
+if [ $res = "reboot" ]; then
+    systemctl reboot
+fi
+
+if [ $res = "shutdown" ]; then
+    systemctl poweroff
+fi
+exit 0

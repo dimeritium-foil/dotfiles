@@ -1,0 +1,17 @@
+#
+# ~/.zprofile
+#
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# The triforce and rupees!
+# ~/.scripts/color-scripts/rupees;
+
+# GUI
+if [[ "$(tty)" = "/dev/tty1" ]]; then
+    figlet -f 3d i3 | lolcat
+    exec startx;
+elif [[ "$(tty)" = "/dev/tty3" ]]; then
+    figlet -f 3d dwm | lolcat
+    exec startx;
+fi

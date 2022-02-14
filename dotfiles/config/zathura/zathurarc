@@ -1,0 +1,14 @@
+map <C--> zoom out
+map <C-=> zoom in
+
+set statusbar-bg "#212121"
+set inputbar-bg "#212121"
+set index-bg "#212121"
+set default-bg "#212121"
+
+set font "TerminessTTF Nerd Font Mono 13"
+set page-padding 2
+set statusbar-v-padding 10
+set selection-clipboard clipboard
+set statusbar-basename true
+set adjust-open width

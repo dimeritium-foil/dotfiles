@@ -1,0 +1,79 @@
+snippet init "document skeleton" b
+\documentclass[12pt]{article}
+
+\usepackage[margin=0.8in]{geometry}
+\usepackage{parskip}
+
+\title{$1}
+\author{$2}
+\date{$3}
+
+\begin{document}
+
+\maketitle
+
+$4
+
+\end{document}
+endsnippet
+
+snippet beg "beginning and end block" b
+\begin{$1}
+$2
+\end{$1}
+endsnippet
+
+snippet sec "section" b
+\section{$1}
+endsnippet
+
+snippet ssec "subsection" b
+\subsection{$1}
+endsnippet
+
+snippet sssec "subsubsection" b
+\subsubsection{$1}
+endsnippet
+
+snippet cimg "insert centered image" b
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=$1\textwidth]{$2}
+\end{figure}
+endsnippet
+
+snippet nls "numbered list" b
+\begin{enumerate}
+	\item $1
+\end{enumerate}
+endsnippet
+
+snippet bls "bullet list" b
+\begin{itemize}
+	\item $1
+\end{itemize}
+endsnippet
+
+snippet it "item" b
+\item 
+endsnippet
+
+snippet fr "fraction" w
+\frac{$1}{$2}
+endsnippet
+
+snippet b "bold" w
+\textbf{$1}
+endsnippet
+
+snippet i "italic" w
+\textit{$1}
+endsnippet
+
+snippet np "newpage" b
+\newpage
+endsnippet
+
+snippet sp "space" b
+\vspace{\baselineskip}
+endsnippet

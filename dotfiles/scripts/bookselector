@@ -1,0 +1,4 @@
+#!/bin/sh
+
+book=$(ls HDD/Books/Textbooks | rofi -dmenu  -theme barmenu.rasi -i -p Textbook) &&
+zathura ~/HDD/Books/Textbooks/"$book"
