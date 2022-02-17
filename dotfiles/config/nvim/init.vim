@@ -168,7 +168,7 @@ filetype plugin on
 
 augroup pencil
   autocmd!
-  autocmd FileType tex         call pencil#init({'wrap': 'soft'})
+  autocmd FileType tex,text         call pencil#init({'wrap': 'soft'})
 augroup END
 
 let g:pencil#conceallevel = 0
