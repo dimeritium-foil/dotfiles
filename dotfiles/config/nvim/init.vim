@@ -15,6 +15,7 @@ Plug 'vim-scripts/TagHighlight'
 
 call plug#end()
 
+let g:dracula_colorterm = 0
 colorscheme dracula
 
 set number
@@ -39,6 +40,8 @@ map <Space> <Leader>
 
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 nnoremap ; :
+
+nmap <Leader>rn :set relativenumber!<CR>
 
 " auto close special characters
 inoremap " ""<left>

@@ -19,9 +19,9 @@ floating_modifier $mod
 bindsym $mod+Shift+s sticky toggle
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id urxvt
 # start a floating terminal
-bindsym $mod+Shift+Return exec --no-startup-id i3-sensible-terminal -title floating
+bindsym $mod+Shift+Return exec --no-startup-id urxvt -title floating
 
 # kill focused window
 bindsym $mod+BackSpace kill
@@ -141,7 +141,6 @@ for_window [class="GNU Octave"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [class="Tk"] floating enable
 for_window [class="firefox" instance="Places"] floating enable
-for_window [class="UltimMC"] floating enable
 
 for_window [class="URxvt" workspace=$ws1] floating enable
 for_window [class="URxvt" title="floating"] floating enable
@@ -191,8 +190,8 @@ bindsym Print exec --no-startup-id "flameshot full -p ~/Pictures/Screenshots/"
 # selection screenshot
 bindsym $mod+backslash exec --no-startup-id "flameshot gui"
 
-# open ranger
-bindsym $mod+r exec "i3-sensible-terminal -g 100x40 -e ranger"
+# open fluent-reader
+bindsym $mod+r exec --no-startup-id fluent-reader
 # open thunar
 bindsym $mod+Shift+r exec thunar
 # open pavucontrol

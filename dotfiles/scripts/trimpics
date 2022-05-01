@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ls *.png *.jpg *.jpeg | while read file; do
+convert -trim $file $file
+done

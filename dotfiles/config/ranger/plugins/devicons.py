@@ -117,6 +117,7 @@ file_node_extensions = {
     'o'        : '',
     'ogg'      : '',
     'pdf'      : '',
+    'djvu'      : '',
     'php'      : '',
     'pl'       : '',
     'pm'       : '',

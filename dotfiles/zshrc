@@ -22,7 +22,7 @@ bindkey "^[[1;5D" backward-word
 PS1="┌─[%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[magenta]%}%M%{$reset_color%}]──[%{$fg[magenta]%}%2c%{$reset_color%}]
 └──╼ "
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.scripts"
 export EDITOR=nvim
 export VISUAL=nvim
 export WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
