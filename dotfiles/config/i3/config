@@ -126,7 +126,7 @@ bindsym $mod+m move workspace to output right
 # workspace program assignments
 assign [class="firefox"] $ws1
 assign [class="discord"] $ws10
-assign [class="whatsapp-nativefier-d40211"] $ws10
+assign [class="Whatsapp-for-linux"] $ws10
 assign [class="TelegramDesktop"] $ws10
 assign [class="Signal"] $ws10
 assign [class="Element"] $ws10

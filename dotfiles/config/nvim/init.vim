@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'lervag/vimtex'
 Plug 'reedes/vim-pencil'
 Plug 'vim-scripts/TagHighlight'
+Plug 'dkarter/bullets.vim'
 
 call plug#end()
 
@@ -28,6 +29,7 @@ set scrolloff=2
 set sidescrolloff=2
 set nowrap
 set sidescroll=1
+set cursorline
 
 set tabstop=4
 set shiftwidth=4
@@ -175,3 +177,18 @@ augroup pencil
 augroup END
 
 let g:pencil#conceallevel = 0
+
+" ================================================================
+
+" ===========
+" bullets.vim 
+" ===========
+
+" Bullets.vim
+let g:bullets_enabled_file_types = [
+    \ 'markdown',
+    \ 'text',
+    \ 'gitcommit'
+    \]
+
+let g:bullets_enable_in_empty_buffers = 0 

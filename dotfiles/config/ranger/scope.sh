@@ -94,6 +94,11 @@ handle_image() {
         #     convert "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
         #     exit 1;;
 
+        # DjVu
+        image/vnd.djvu)
+            ddjvu -format=tiff -quality=80 -page=1 "${FILE_PATH}" "${IMAGE_CACHE_PATH%}" \
+                && exit 6 || exit 1;;
+
         # Image
         image/*)
             local orientation
@@ -110,10 +115,12 @@ handle_image() {
             exit 7;;
 
         # Video
-        # video/*)
-        #     # Thumbnail
-        #     ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && exit 6
-        #     exit 1;;
+        video/*)
+            # Get embedded thumbnail
+            ffmpeg -i "${FILE_PATH}" -map 0:v -map -0:V -c copy "${IMAGE_CACHE_PATH}" && exit 6
+            # Alternative with ffmpegthumbnailer 
+            ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && exit 6
+            exit 1;;
 
         # PDF
         application/pdf)
@@ -123,6 +130,12 @@ handle_image() {
                      -singlefile \
                      -jpeg -tiffcompression jpeg \
                      -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
+                && exit 6 || exit 1;;
+
+        # mp3
+        # preview album art
+        audio/mpeg)
+            ffmpeg -i ${FILE_PATH} -an -c:v copy ${IMAGE_CACHE_PATH} \
                 && exit 6 || exit 1;;
 
         # Preview archives using the first image inside.
