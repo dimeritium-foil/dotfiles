@@ -1,4 +1,4 @@
 {
     "diagnostic.warningSign": "!!",
-    "clangd.enabled": "false"
+    "clangd.inlayHints.enable": false
 }

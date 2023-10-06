@@ -1,0 +1,19 @@
+#!/bin/sh
+
+volume=$(~/.scripts/pybar $(pamixer --get-volume))
+active_port="$(pacmd list-sinks | awk '/\*/ {getline; print;}')"
+
+case $active_port in
+    *hdmi*)
+        if [ "$(pamixer --get-mute)" = "false" ]; then
+            icon=""
+        else
+            icon=""
+        fi
+        ;;
+    *analog*)
+            icon=""
+        ;;
+esac
+
+dunstify -r 9999 -t 1000 "$icon  $volume"

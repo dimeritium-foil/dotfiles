@@ -3,6 +3,8 @@ snippet init "document skeleton" b
 
 \usepackage[margin=0.8in]{geometry}
 \usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{float}
 
 \title{$1}
 \author{$2}
@@ -38,7 +40,7 @@ endsnippet
 snippet cimg "insert centered image" b
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=$1\textwidth]{$2}
+	\includegraphics[scale=$1]{$2}
 \end{figure}
 endsnippet
 

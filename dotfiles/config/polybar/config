@@ -52,7 +52,7 @@ override-redirect = true
 wm-restack = i3
 
 [bar/mainbar]
-monitor = DVI-D-0
+monitor = DVI-I-1
 
 width = 100%
 height = 32

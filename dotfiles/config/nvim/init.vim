@@ -2,7 +2,7 @@ call plug#begin('~/.config/nvim/plugins')
 
 Plug 'itchyny/lightline.vim'
 Plug 'mboughaba/i3config.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
@@ -158,7 +158,7 @@ let g:vimtex_compiler_latexmk = {
 " vim-commentary 
 " ==============
 
-autocmd FileType c,cpp,cs,java,arduino setlocal commentstring=//\ %s
+autocmd FileType c,cpp,cs,java,arduino,cuda setlocal commentstring=//\ %s
 autocmd FileType matlab setlocal commentstring=%\ %s
 
 " ================================================================

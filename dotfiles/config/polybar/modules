@@ -67,7 +67,7 @@ label = %gb_used:2GB%
 ;modify
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface = enp33s0
 interval = 1
 
 format-connected-prefix-foreground = ${colors.foreground}

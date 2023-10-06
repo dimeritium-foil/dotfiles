@@ -35,7 +35,8 @@
 *.color7:       #707880
 *.color15:      #c5c8c6
 
-URxvt.font: xft:TerminessTTF Nerd Font Mono:style=Bold:pixelsize=18
+URxvt.font: xft:TerminessTTF Nerd Font Mono:style=Bold:pixelsize=17
+!URxvt.font: xft:Iosevka:style=Bold:pixelsize=17
 URxvt.perl-ext-common: default,matcher
 URxvt scrollstyle: plain
 URxvt.scrollBar: false
